@@ -1,2 +1,2 @@
+![image](https://github.com/varnitvishwakarma/HEART_DISEASE_PREDICTION/assets/120304453/b922f834-2223-4fb5-8df7-0de46b4bdd84)
 
-![Screenshot (513)](https://github.com/varnitvishwakarma/HEART_DISEASE_PREDICTION/assets/120304453/388fc5b1-c404-45b8-9df5-1f59daadc905)
