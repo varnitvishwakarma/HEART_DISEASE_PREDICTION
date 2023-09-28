@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HEART DISEASE PREDICTOR</title>
+  
+  <style>
+    body {
+      background-color: #000000;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh;
+    }
+
+    
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+      top: 0;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+  }
+
+  .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+  }
+
+  .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+  }
+
+    .login {
+      text-align: center;
+      margin-top:500px;
+      padding: 20px;
+      width: 650px;
+      height: 850px; 
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+
+    h1 {
+      color: #333; 
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    select {
+      background-color: white; 
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color:black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color:white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a onclick="openHomePage()">Home</a>
+    <a onclick="openAboutPage()">About</a>
+    <a onclick="openContactPage()">Contact Us</a>
+  </div>
+  <div class="login">
+    <h1>Coronary Artery Disease Predictor</h1>
+
+    <form action="{{ url_for('predict_data')}}" method="post">
+      <input type="text" name="AGE" placeholder="Please enter your age in years." required="required" /><br>
+      <select id="gender" name="SEX">
+        <option  selected disabled hidden>Select your gender</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select><br>
+      <select id="cp" name="ChestPain">
+        <option  selected disabled hidden>Indicate the type of chest pain you are experiencing</option>
+        <option value="Typical Angina">Typical Angina</option>
+        <option value="Atypical Angina">Atypical Angina</option>
+        <option value="Non-Anginal Pain">Non-Anginal Pain</option>
+        <option value="Asymptomatic">Asymptomatic</option>
+      </select><br>
+      <input type="text" name="Trestbps" placeholder="Please enter your resting blood pressure in mm Hg." required="required" /><br>
+      <input type="text" name="Chol" placeholder="Please enter your cholesterol level in mg/dl." required="required" /><br>
+      <select id="fbs" name="FastingBloodSugar">
+        <option  selected disabled hidden>Is your fasting blood sugar level higher than 120 mg/dl?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+      
+      <select id="restecg" name="RestECG">
+        <option  selected disabled hidden>Select the result of your resting electrocardiogram</option>
+        <option value="Normal">Normal</option>
+        <option value="ST-T Wave Abnormalities">ST-T Wave Abnormalities</option>
+        <option value="Probable or Definite Left Ventricular Hypertrophy">Probable or Definite Left Ventricular Hypertrophy</option>
+      </select><br>
+      <input type="text" name="Thalach" placeholder="Please enter your maximum heart rate achieved during exercise." required="required" /><br>
+      <select id="exang" name="ExerciseInducedAngina">
+        <option  selected disabled hidden>Do you experience exercise-induced angina?</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select><br>
+      <input type="text" name="Oldpeak" placeholder="Please enter the ST depression induced by exercise relative to rest." required="required" /><br>
+      <select id="slope" name="Slope">
+        <option  selected disabled hidden>Indicate the slope of your peak exercise ST segment</option>
+        <option value="Upsloping">Upsloping</option>
+        <option value="Flat">Flat</option>
+        <option value="Downsloping">Downsloping</option>
+      </select><br>
+      <select id="ca" name="NumberOfMajorVessels">
+        <option  selected disabled hidden>Please enter the number of major vessels colored by fluoroscopy</option>
+        <option value="0">0 Major Vessels</option>
+        <option value="1">1 Major Vessel</option>
+        <option value="2">2 Major Vessels</option>
+        <option value="3">3 Major Vessels</option>
+        <option value="4">4 Major Vessels</option>
+      </select><br>
+      <select id="thal" name="Thalassemia">
+        <option  selected disabled hidden>Select your thalassemia status based on thallium stress testing</option>
+        <option value="0">Normal</option>
+        <option value="1">Fixed Defect</option>
+        <option value="2">Reversible Defect</option><br>
+
+      </select><br>
+      <button type="submit">Predict</button>
+</form>
+
+     <h2>Result:{{result}}</h2>
+  </div>
+  <script>
+    function openHomePage() {
+      var url = '/home';
+      window.open(url, '_blank');
+    }
+
+    function openContactPage() {
+      var url = '/contact';
+      window.open(url, '_blank');
+    }
+
+    function openAboutPage() {
+      var url = '/about';
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>

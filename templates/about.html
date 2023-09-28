@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HEART DISEASE PREDICTOR</title>
+  
+  <style>
+    body {
+      background-color: #000000;
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh;
+    }
+
+    
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.5);
+      overflow: hidden;
+      top: 0;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      backdrop-filter: blur(10px);
+  }
+
+  .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+  }
+
+  .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+  }
+
+    .login {
+      text-align:left;
+      margin-top:700px;
+      padding: 20px;
+      width: 900px;
+      height: 1300px; 
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+
+  
+
+   
+
+
+
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a onclick="openHomePage()">Home</a>
+    <a onclick="openAboutPage()">About</a>
+    <a onclick="openContactPage()">Contact Us</a>
+  </div>
+  <div class="login">
+    
+        <h1>About Our Heart Disease Prediction Tool</h1>
+        <p>Welcome to our Heart Disease Prediction Tool!</p>
+
+        <h2>What is This?</h2>
+        <p>This web application is designed to help you predict the likelihood of heart disease based on a set of essential health attributes. We've built this tool using a comprehensive dataset that contains information about various individuals and their heart health.</p>
+
+        <h2>The Dataset</h2>
+        <p>Our predictions are powered by a dataset that includes:</p>
+        <ul>
+            <li>Age: The age of the individual.</li>
+            <li>Sex: Whether the person is male or female.</li>
+            <li>Chest Pain Type: The type of chest pain experienced.</li>
+            <li>Resting Blood Pressure: Blood pressure at rest.</li>
+            <li>Cholesterol: Cholesterol levels.</li>
+            <li>Fasting Blood Sugar: Whether fasting blood sugar is high.</li>
+            <li>Resting Electrocardiographic Results: ECG results at rest.</li>
+            <li>Maximum Heart Rate Achieved: The highest heart rate during a test.</li>
+            <li>Exercise-Induced Angina: Presence of angina during exercise.</li>
+            <li>ST Depression Induced by Exercise: ST segment depression during exercise.</li>
+            <li>Slope: Slope of the peak exercise ST segment.</li>
+            <li>Number of Major Vessels: Count of major blood vessels.</li>
+            <li>Thalassemia: A blood disorder type.</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <p>Our predictive model uses machine learning techniques to analyze these attributes and make a prediction about heart disease. We've trained the model using historical data to ensure accurate results.</p>
+
+        <h2>Interpretation of Results</h2>
+        <p>
+            <strong>Prediction Outcome:</strong> A prediction of 0 indicates a lower likelihood of heart disease, while a prediction of 1 suggests a higher likelihood.<br>
+            <strong>Accuracy:</strong> Our model strives for accuracy, but remember, it's a prediction, not a definitive diagnosis. Consult a healthcare professional for a complete evaluation.
+        </p>
+
+        <h2>Why Use Our Tool?</h2>
+        <ul>
+            <li>Early Detection: Detect potential heart issues early for timely intervention.</li>
+            <li>Risk Assessment: Understand your risk factors and make informed health decisions.</li>
+            <li>Easy to Use: Our user-friendly interface makes it simple to get your prediction.</li>
+        </ul>
+
+        <h2>Disclaimer</h2>
+        <ul>
+            <li>Our tool is not a substitute for professional medical advice.</li>
+            <li>Always consult with a healthcare provider for accurate diagnosis and treatment.</li>
+        </ul>
+
+        <h2>Privacy & Security</h2>
+        <p>We take your privacy seriously. Your data is securely handled and not shared with third parties.</p>
+
+        <h2>Get Started</h2>
+        <p>Take a step towards a healthier heart. Enter your information, and let's predict your heart disease risk!</p>
+    </div>
+
+    <script>
+        function openHomePage() {
+            var url = '/home';
+            window.open(url, '_blank');
+        }
+        
+        function openContactPage() {
+            var url = '/contact';
+            window.open(url, '_blank');
+        }
+    
+       
+    </script>
+</body>
+</html>
