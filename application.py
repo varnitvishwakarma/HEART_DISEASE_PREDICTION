@@ -3,7 +3,7 @@ import pickle
 from flask import Response
 
 
-ran_model=pickle.load(open("/config/workspace/Models/random.pkl","rb"))
+ran_model=pickle.load(open("C:\\Users\\tusha\\OneDrive\\Desktop\\heart\\HEART_DISEASE_PREDICTION\\Models\\random.pkl","rb"))
 
 
 
